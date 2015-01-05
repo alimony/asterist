@@ -7,3 +7,6 @@
 [submodule "External/go"]
 	path = External/go
 	url = https://github.com/golang/go.git
+[submodule "External/node"]
+	path = External/node
+	url = https://github.com/joyent/node.git
