@@ -4,3 +4,6 @@
 [submodule "External/node/npm"]
 	path = External/node/npm
 	url = https://github.com/npm/npm.git
+[submodule "External/go"]
+	path = External/go
+	url = https://github.com/golang/go.git

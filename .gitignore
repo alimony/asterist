@@ -14,4 +14,6 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+External/go-ipfs/bin/
+External/go-ipfs/pkg/
 External/go-ipfs/src/

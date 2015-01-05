@@ -20,19 +20,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		28CDF1BD1A50BAD5006B019A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 28AB2C031A4EF4BB006D241F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 28CDF1B71A50B807006B019A;
-			remoteInfo = "go-ipfs";
-		};
 		28CDF1C41A50BF78006B019A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 28AB2C031A4EF4BB006D241F /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 28CDF1C01A50BC1E006B019A;
 			remoteInfo = "ipfs-webui";
+		};
+		28DC8F4D1A5B54BB00853E17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28AB2C031A4EF4BB006D241F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28CDF1B71A50B807006B019A;
+			remoteInfo = "go-ipfs";
+		};
+		28DC8F4F1A5B54BF00853E17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28AB2C031A4EF4BB006D241F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28DC8F451A5B530800853E17;
+			remoteInfo = go;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -152,6 +159,7 @@
 			buildToolPath = /usr/bin/make;
 			buildWorkingDirectory = External;
 			dependencies = (
+				28DC8F501A5B54BF00853E17 /* PBXTargetDependency */,
 			);
 			name = "go-ipfs";
 			passBuildSettingsInEnvironment = 1;
@@ -166,10 +174,25 @@
 			buildToolPath = /usr/bin/make;
 			buildWorkingDirectory = External;
 			dependencies = (
+				28DC8F4E1A5B54BB00853E17 /* PBXTargetDependency */,
 			);
 			name = "ipfs-webui";
 			passBuildSettingsInEnvironment = 1;
 			productName = "ipfs-webui";
+		};
+		28DC8F451A5B530800853E17 /* go */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 28DC8F481A5B530800853E17 /* Build configuration list for PBXLegacyTarget "go" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = External;
+			dependencies = (
+			);
+			name = go;
+			passBuildSettingsInEnvironment = 1;
+			productName = go;
 		};
 /* End PBXLegacyTarget section */
 
@@ -186,7 +209,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				28CDF1BE1A50BAD5006B019A /* PBXTargetDependency */,
 				28CDF1C51A50BF78006B019A /* PBXTargetDependency */,
 			);
 			name = Asterist;
@@ -213,6 +235,9 @@
 					28CDF1C01A50BC1E006B019A = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
+					28DC8F451A5B530800853E17 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 				};
 			};
 			buildConfigurationList = 28AB2C061A4EF4BB006D241F /* Build configuration list for PBXProject "Asterist" */;
@@ -229,6 +254,7 @@
 			projectRoot = "";
 			targets = (
 				28AB2C0A1A4EF4BB006D241F /* Asterist */,
+				28DC8F451A5B530800853E17 /* go */,
 				28CDF1B71A50B807006B019A /* go-ipfs */,
 				28CDF1C01A50BC1E006B019A /* ipfs-webui */,
 			);
@@ -262,15 +288,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		28CDF1BE1A50BAD5006B019A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 28CDF1B71A50B807006B019A /* go-ipfs */;
-			targetProxy = 28CDF1BD1A50BAD5006B019A /* PBXContainerItemProxy */;
-		};
 		28CDF1C51A50BF78006B019A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 28CDF1C01A50BC1E006B019A /* ipfs-webui */;
 			targetProxy = 28CDF1C41A50BF78006B019A /* PBXContainerItemProxy */;
+		};
+		28DC8F4E1A5B54BB00853E17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28CDF1B71A50B807006B019A /* go-ipfs */;
+			targetProxy = 28DC8F4D1A5B54BB00853E17 /* PBXContainerItemProxy */;
+		};
+		28DC8F501A5B54BF00853E17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28DC8F451A5B530800853E17 /* go */;
+			targetProxy = 28DC8F4F1A5B54BF00853E17 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -436,6 +467,31 @@
 			};
 			name = Release;
 		};
+		28DC8F461A5B530800853E17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		28DC8F471A5B530800853E17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -474,6 +530,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		28DC8F481A5B530800853E17 /* Build configuration list for PBXLegacyTarget "go" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28DC8F461A5B530800853E17 /* Debug */,
+				28DC8F471A5B530800853E17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
