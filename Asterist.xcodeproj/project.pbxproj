@@ -62,8 +62,8 @@
 		28AB2C151A4EF4BB006D241F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../Asterist/ViewController.h; sourceTree = "<group>"; };
 		28AB2C161A4EF4BB006D241F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../Asterist/ViewController.m; sourceTree = "<group>"; };
 		28AB2C181A4EF4BB006D241F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Asterist/Images.xcassets; sourceTree = "<group>"; };
-		28CDF1771A50AA2A006B019A /* go */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = go; path = External/bin/go; sourceTree = "<group>"; };
-		28CDF1791A50AA36006B019A /* node */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = node; path = External/bin/node; sourceTree = "<group>"; };
+		28CDF1771A50AA2A006B019A /* go */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = go; path = External/go/bin/go; sourceTree = "<group>"; };
+		28CDF1791A50AA36006B019A /* node */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = node; path = External/node/bin/node; sourceTree = "<group>"; };
 		28CDF1BB1A50BACD006B019A /* ipfs */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = ipfs; path = "External/go-ipfs/bin/ipfs"; sourceTree = "<group>"; };
 		28CDF1C61A50BFEB006B019A /* ipfs-webui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ipfs-webui"; path = "External/ipfs-webui"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
