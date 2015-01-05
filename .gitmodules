@@ -1,0 +1,3 @@
+[submodule "External/ipfs-webui"]
+	path = External/ipfs-webui
+	url = https://github.com/mappum/ipfs-webui.git

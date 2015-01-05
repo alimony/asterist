@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		288DB0D31A544DD20025C1A7 /* Application.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288DB0D21A544DD20025C1A7 /* Application.xib */; };
+		288DB0D51A54523E0025C1A7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288DB0D41A54523D0025C1A7 /* WebKit.framework */; };
+		28AB2C121A4EF4BB006D241F /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AB2C111A4EF4BB006D241F /* AppController.m */; };
+		28AB2C141A4EF4BB006D241F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AB2C131A4EF4BB006D241F /* main.m */; };
+		28AB2C171A4EF4BB006D241F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AB2C161A4EF4BB006D241F /* ViewController.m */; };
+		28AB2C191A4EF4BB006D241F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28AB2C181A4EF4BB006D241F /* Images.xcassets */; };
+		28CDF17D1A50AA58006B019A /* go in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28CDF1771A50AA2A006B019A /* go */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		28CDF17E1A50AA58006B019A /* node in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28CDF1791A50AA36006B019A /* node */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		28CDF1BF1A50BAE1006B019A /* ipfs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28CDF1BB1A50BACD006B019A /* ipfs */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		28CDF1C71A50BFEB006B019A /* ipfs-webui in Resources */ = {isa = PBXBuildFile; fileRef = 28CDF1C61A50BFEB006B019A /* ipfs-webui */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28CDF1BD1A50BAD5006B019A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28AB2C031A4EF4BB006D241F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28CDF1B71A50B807006B019A;
+			remoteInfo = "go-ipfs";
+		};
+		28CDF1C41A50BF78006B019A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28AB2C031A4EF4BB006D241F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28CDF1C01A50BC1E006B019A;
+			remoteInfo = "ipfs-webui";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		28CDF17B1A50AA40006B019A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				28CDF1BF1A50BAE1006B019A /* ipfs in CopyFiles */,
+				28CDF17D1A50AA58006B019A /* go in CopyFiles */,
+				28CDF17E1A50AA58006B019A /* node in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		288DB0D21A544DD20025C1A7 /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Application.xib; path = ../Asterist/Application.xib; sourceTree = "<group>"; };
+		288DB0D41A54523D0025C1A7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		28AB2C0B1A4EF4BB006D241F /* Asterist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asterist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28AB2C0F1A4EF4BB006D241F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Asterist/Info.plist; sourceTree = "<group>"; };
+		28AB2C101A4EF4BB006D241F /* AppController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ../Asterist/AppController.h; sourceTree = "<group>"; };
+		28AB2C111A4EF4BB006D241F /* AppController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppController.m; path = ../Asterist/AppController.m; sourceTree = "<group>"; };
+		28AB2C131A4EF4BB006D241F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../Asterist/main.m; sourceTree = "<group>"; };
+		28AB2C151A4EF4BB006D241F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../Asterist/ViewController.h; sourceTree = "<group>"; };
+		28AB2C161A4EF4BB006D241F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../Asterist/ViewController.m; sourceTree = "<group>"; };
+		28AB2C181A4EF4BB006D241F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Asterist/Images.xcassets; sourceTree = "<group>"; };
+		28CDF1771A50AA2A006B019A /* go */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = go; path = External/bin/go; sourceTree = "<group>"; };
+		28CDF1791A50AA36006B019A /* node */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = node; path = External/bin/node; sourceTree = "<group>"; };
+		28CDF1BB1A50BACD006B019A /* ipfs */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = ipfs; path = "External/go-ipfs/bin/ipfs"; sourceTree = "<group>"; };
+		28CDF1C61A50BFEB006B019A /* ipfs-webui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ipfs-webui"; path = "External/ipfs-webui"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28AB2C081A4EF4BB006D241F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				288DB0D51A54523E0025C1A7 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28AB2C021A4EF4BB006D241F = {
+			isa = PBXGroup;
+			children = (
+				28CDF1761A50AA1C006B019A /* Executables */,
+				28CDF1C61A50BFEB006B019A /* ipfs-webui */,
+				28AB2C0D1A4EF4BB006D241F /* Asterist */,
+				28E273FB1A55CEC900D5ED2F /* Frameworks */,
+				28AB2C0C1A4EF4BB006D241F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28AB2C0C1A4EF4BB006D241F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28AB2C0B1A4EF4BB006D241F /* Asterist.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28AB2C0D1A4EF4BB006D241F /* Asterist */ = {
+			isa = PBXGroup;
+			children = (
+				28AB2C101A4EF4BB006D241F /* AppController.h */,
+				28AB2C111A4EF4BB006D241F /* AppController.m */,
+				28AB2C151A4EF4BB006D241F /* ViewController.h */,
+				28AB2C161A4EF4BB006D241F /* ViewController.m */,
+				28AB2C181A4EF4BB006D241F /* Images.xcassets */,
+				288DB0D21A544DD20025C1A7 /* Application.xib */,
+				28AB2C0E1A4EF4BB006D241F /* Supporting Files */,
+			);
+			path = Asterist;
+			sourceTree = "<group>";
+		};
+		28AB2C0E1A4EF4BB006D241F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				28AB2C0F1A4EF4BB006D241F /* Info.plist */,
+				28AB2C131A4EF4BB006D241F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		28CDF1761A50AA1C006B019A /* Executables */ = {
+			isa = PBXGroup;
+			children = (
+				28CDF1771A50AA2A006B019A /* go */,
+				28CDF1BB1A50BACD006B019A /* ipfs */,
+				28CDF1791A50AA36006B019A /* node */,
+			);
+			name = Executables;
+			sourceTree = "<group>";
+		};
+		28E273FB1A55CEC900D5ED2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				288DB0D41A54523D0025C1A7 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		28CDF1B71A50B807006B019A /* go-ipfs */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 28CDF1B81A50B807006B019A /* Build configuration list for PBXLegacyTarget "go-ipfs" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = External;
+			dependencies = (
+			);
+			name = "go-ipfs";
+			passBuildSettingsInEnvironment = 1;
+			productName = "go-ipfs";
+		};
+		28CDF1C01A50BC1E006B019A /* ipfs-webui */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 28CDF1C11A50BC1E006B019A /* Build configuration list for PBXLegacyTarget "ipfs-webui" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = External;
+			dependencies = (
+			);
+			name = "ipfs-webui";
+			passBuildSettingsInEnvironment = 1;
+			productName = "ipfs-webui";
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		28AB2C0A1A4EF4BB006D241F /* Asterist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28AB2C2B1A4EF4BB006D241F /* Build configuration list for PBXNativeTarget "Asterist" */;
+			buildPhases = (
+				28CDF17B1A50AA40006B019A /* CopyFiles */,
+				28AB2C071A4EF4BB006D241F /* Sources */,
+				28AB2C081A4EF4BB006D241F /* Frameworks */,
+				28AB2C091A4EF4BB006D241F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28CDF1BE1A50BAD5006B019A /* PBXTargetDependency */,
+				28CDF1C51A50BF78006B019A /* PBXTargetDependency */,
+			);
+			name = Asterist;
+			productName = Asterist;
+			productReference = 28AB2C0B1A4EF4BB006D241F /* Asterist.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28AB2C031A4EF4BB006D241F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = "";
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Markus Amalthea Magnuson";
+				TargetAttributes = {
+					28AB2C0A1A4EF4BB006D241F = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					28CDF1B71A50B807006B019A = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					28CDF1C01A50BC1E006B019A = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 28AB2C061A4EF4BB006D241F /* Build configuration list for PBXProject "Asterist" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28AB2C021A4EF4BB006D241F;
+			productRefGroup = 28AB2C0C1A4EF4BB006D241F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28AB2C0A1A4EF4BB006D241F /* Asterist */,
+				28CDF1B71A50B807006B019A /* go-ipfs */,
+				28CDF1C01A50BC1E006B019A /* ipfs-webui */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28AB2C091A4EF4BB006D241F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				288DB0D31A544DD20025C1A7 /* Application.xib in Resources */,
+				28CDF1C71A50BFEB006B019A /* ipfs-webui in Resources */,
+				28AB2C191A4EF4BB006D241F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28AB2C071A4EF4BB006D241F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AB2C171A4EF4BB006D241F /* ViewController.m in Sources */,
+				28AB2C141A4EF4BB006D241F /* main.m in Sources */,
+				28AB2C121A4EF4BB006D241F /* AppController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28CDF1BE1A50BAD5006B019A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28CDF1B71A50B807006B019A /* go-ipfs */;
+			targetProxy = 28CDF1BD1A50BAD5006B019A /* PBXContainerItemProxy */;
+		};
+		28CDF1C51A50BF78006B019A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28CDF1C01A50BC1E006B019A /* ipfs-webui */;
+			targetProxy = 28CDF1C41A50BF78006B019A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		28AB2C291A4EF4BB006D241F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		28AB2C2A1A4EF4BB006D241F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		28AB2C2C1A4EF4BB006D241F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Asterist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = Asterist;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		28AB2C2D1A4EF4BB006D241F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Asterist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = Asterist;
+			};
+			name = Release;
+		};
+		28CDF1B91A50B807006B019A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GOPATH = "$(PROJECT_DIR)/External/go-ipfs";
+				GOROOT = "$(PROJECT_DIR)/External/go";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PATH = "$(PATH):$(GOROOT)/bin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		28CDF1BA1A50B807006B019A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GOPATH = "$(PROJECT_DIR)/External/go-ipfs";
+				GOROOT = "$(PROJECT_DIR)/External/go";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PATH = "$(PATH):$(GOROOT)/bin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		28CDF1C21A50BC1E006B019A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PATH = "$(PROJECT_DIR)/External/node/bin:$(PATH)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		28CDF1C31A50BC1E006B019A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PATH = "$(PROJECT_DIR)/External/node/bin:$(PATH)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28AB2C061A4EF4BB006D241F /* Build configuration list for PBXProject "Asterist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28AB2C291A4EF4BB006D241F /* Debug */,
+				28AB2C2A1A4EF4BB006D241F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28AB2C2B1A4EF4BB006D241F /* Build configuration list for PBXNativeTarget "Asterist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28AB2C2C1A4EF4BB006D241F /* Debug */,
+				28AB2C2D1A4EF4BB006D241F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28CDF1B81A50B807006B019A /* Build configuration list for PBXLegacyTarget "go-ipfs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28CDF1B91A50B807006B019A /* Debug */,
+				28CDF1BA1A50B807006B019A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28CDF1C11A50BC1E006B019A /* Build configuration list for PBXLegacyTarget "ipfs-webui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28CDF1C21A50BC1E006B019A /* Debug */,
+				28CDF1C31A50BC1E006B019A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28AB2C031A4EF4BB006D241F /* Project object */;
+}
