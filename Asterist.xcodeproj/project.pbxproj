@@ -213,7 +213,7 @@
 			dependencies = (
 			);
 			name = node;
-			passBuildSettingsInEnvironment = 1;
+			passBuildSettingsInEnvironment = 0;
 			productName = node;
 		};
 /* End PBXLegacyTarget section */
@@ -281,8 +281,8 @@
 				28AB2C0A1A4EF4BB006D241F /* Asterist */,
 				28DC8F451A5B530800853E17 /* go */,
 				28CDF1B71A50B807006B019A /* go-ipfs */,
-				28CDF1C01A50BC1E006B019A /* ipfs-webui */,
 				28DC8F551A5B59F300853E17 /* node */,
+				28CDF1C01A50BC1E006B019A /* ipfs-webui */,
 			);
 		};
 /* End PBXProject section */
@@ -483,7 +483,7 @@
 				);
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PATH = "$(PROJECT_DIR)/External/node/bin:$(PROJECT_DIR)/External/node/deps/bin:$(PATH)";
+				PATH = "$(PROJECT_DIR)/External/node:$(PROJECT_DIR)/External/bin:$(PATH)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -493,7 +493,7 @@
 			buildSettings = {
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PATH = "$(PROJECT_DIR)/External/node/bin:$(PROJECT_DIR)/External/node/deps/bin:$(PATH)";
+				PATH = "$(PROJECT_DIR)/External/node:$(PROJECT_DIR)/External/bin:$(PATH)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -605,6 +605,7 @@
 				28DC8F581A5B59F300853E17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
