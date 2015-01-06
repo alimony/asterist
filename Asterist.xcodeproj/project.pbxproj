@@ -41,6 +41,13 @@
 			remoteGlobalIDString = 28DC8F451A5B530800853E17;
 			remoteInfo = go;
 		};
+		28DC8F591A5B5A0B00853E17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28AB2C031A4EF4BB006D241F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28DC8F551A5B59F300853E17;
+			remoteInfo = node;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,7 +77,7 @@
 		28AB2C161A4EF4BB006D241F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../Asterist/ViewController.m; sourceTree = "<group>"; };
 		28AB2C181A4EF4BB006D241F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Asterist/Images.xcassets; sourceTree = "<group>"; };
 		28CDF1771A50AA2A006B019A /* go */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = go; path = External/go/bin/go; sourceTree = "<group>"; };
-		28CDF1791A50AA36006B019A /* node */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = node; path = External/node/bin/node; sourceTree = "<group>"; };
+		28CDF1791A50AA36006B019A /* node */ = {isa = PBXFileReference; lastKnownFileType = text; name = node; path = External/node/node; sourceTree = "<group>"; };
 		28CDF1BB1A50BACD006B019A /* ipfs */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = ipfs; path = "External/go-ipfs/bin/ipfs"; sourceTree = "<group>"; };
 		28CDF1C61A50BFEB006B019A /* ipfs-webui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ipfs-webui"; path = "External/ipfs-webui"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +181,7 @@
 			buildToolPath = /usr/bin/make;
 			buildWorkingDirectory = External;
 			dependencies = (
+				28DC8F5A1A5B5A0B00853E17 /* PBXTargetDependency */,
 				28DC8F4E1A5B54BB00853E17 /* PBXTargetDependency */,
 			);
 			name = "ipfs-webui";
@@ -193,6 +201,20 @@
 			name = go;
 			passBuildSettingsInEnvironment = 1;
 			productName = go;
+		};
+		28DC8F551A5B59F300853E17 /* node */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 28DC8F561A5B59F300853E17 /* Build configuration list for PBXLegacyTarget "node" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = External;
+			dependencies = (
+			);
+			name = node;
+			passBuildSettingsInEnvironment = 1;
+			productName = node;
 		};
 /* End PBXLegacyTarget section */
 
@@ -238,6 +260,9 @@
 					28DC8F451A5B530800853E17 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
+					28DC8F551A5B59F300853E17 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 				};
 			};
 			buildConfigurationList = 28AB2C061A4EF4BB006D241F /* Build configuration list for PBXProject "Asterist" */;
@@ -257,6 +282,7 @@
 				28DC8F451A5B530800853E17 /* go */,
 				28CDF1B71A50B807006B019A /* go-ipfs */,
 				28CDF1C01A50BC1E006B019A /* ipfs-webui */,
+				28DC8F551A5B59F300853E17 /* node */,
 			);
 		};
 /* End PBXProject section */
@@ -302,6 +328,11 @@
 			isa = PBXTargetDependency;
 			target = 28DC8F451A5B530800853E17 /* go */;
 			targetProxy = 28DC8F4F1A5B54BF00853E17 /* PBXContainerItemProxy */;
+		};
+		28DC8F5A1A5B5A0B00853E17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28DC8F551A5B59F300853E17 /* node */;
+			targetProxy = 28DC8F591A5B5A0B00853E17 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -452,7 +483,7 @@
 				);
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PATH = "$(PROJECT_DIR)/External/node/bin:$(PATH)";
+				PATH = "$(PROJECT_DIR)/External/node/bin:$(PROJECT_DIR)/External/node/deps/bin:$(PATH)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -462,7 +493,7 @@
 			buildSettings = {
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PATH = "$(PROJECT_DIR)/External/node/bin:$(PATH)";
+				PATH = "$(PROJECT_DIR)/External/node/bin:$(PROJECT_DIR)/External/node/deps/bin:$(PATH)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -479,11 +510,38 @@
 				);
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PATH = "$(PROJECT_DIR)/External/go/bin:$(PATH)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		28DC8F471A5B530800853E17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PATH = "$(PROJECT_DIR)/External/go/bin:$(PATH)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		28DC8F571A5B59F300853E17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		28DC8F581A5B59F300853E17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				OTHER_CFLAGS = "";
@@ -536,6 +594,15 @@
 			buildConfigurations = (
 				28DC8F461A5B530800853E17 /* Debug */,
 				28DC8F471A5B530800853E17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28DC8F561A5B59F300853E17 /* Build configuration list for PBXLegacyTarget "node" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28DC8F571A5B59F300853E17 /* Debug */,
+				28DC8F581A5B59F300853E17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
