@@ -213,7 +213,7 @@
 			dependencies = (
 			);
 			name = node;
-			passBuildSettingsInEnvironment = 0;
+			passBuildSettingsInEnvironment = 1;
 			productName = node;
 		};
 /* End PBXLegacyTarget section */
