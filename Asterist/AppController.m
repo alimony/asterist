@@ -32,6 +32,10 @@
     [[self ipfs] interrupt];
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
+    return YES;
+}
+
 #pragma mark -
 #pragma mark IPFS backend
 
