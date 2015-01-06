@@ -166,9 +166,11 @@
         }
         else if ([outputString containsString:@"Using gulpfile"]) {
             NSLog(@"Displaying web interface");
-            // TODO: Calling displayWebInterface directly only starts the page load but
-            // never finishes, and I have no idea why. This little hack will fix it for now.
-            [self performSelector:@selector(displayWebInterface) withObject:nil afterDelay:2.0];
+            [self setWebInterfaceTimer:[NSTimer scheduledTimerWithTimeInterval:2.0
+                                                                        target:self
+                                                                      selector:@selector(displayWebInterface)
+                                                                      userInfo:nil
+                                                                       repeats:YES]];
         }
     }
 }
@@ -191,6 +193,7 @@
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
     NSLog(@"Finished loading web view");
+    [[self webInterfaceTimer] invalidate];
     [[[self mainViewController] spinner] stopAnimation:self];
     [[[self mainViewController] spinnerText] setHidden:YES];
 }

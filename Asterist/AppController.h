@@ -17,5 +17,6 @@
 @property NSString *executablesPath;
 @property NSTask *ipfs;
 @property NSTask *webInterface;
+@property NSTimer *webInterfaceTimer;
 
 @end
