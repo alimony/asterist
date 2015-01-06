@@ -28,13 +28,8 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     NSLog(@"Terminating gulp");
     [[self webInterface] interrupt];
-    [[self webInterface] waitUntilExit];
-    
     NSLog(@"Terminating ipfs");
-    // TODO: Why is this suddenly so slow? Running ipfs from the command-line
-    // and sending it SIGINT will quit immediately.
     [[self ipfs] interrupt];
-    [[self ipfs] waitUntilExit];
 }
 
 #pragma mark -
@@ -73,6 +68,9 @@
     if ([initIpfsTask terminationStatus] != 0) {
         NSLog(@"Could not initialize ipfs, aborting");
         [NSApp terminate:nil];
+    }
+    else {
+        NSLog(@"ipfs successfully initialized, continuing");
     }
 
     [self launchIpfs:@[@"daemon"]];
