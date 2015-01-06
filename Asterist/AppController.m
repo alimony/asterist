@@ -171,7 +171,8 @@
 
 - (void)taskTerminated:(NSNotification *)notification {
     NSTask *task = (NSTask *)[notification object];
-    NSLog(@"%@ terminated with exit status %i", [[task launchPath] lastPathComponent], [task terminationStatus]);
+    NSLog(@"%@ (pid %d) terminated with exit status %i",
+          [[task launchPath] lastPathComponent], [task processIdentifier], [task terminationStatus]);
     // TODO: This needs to remove only observation of the ipfs process, probably
     // by having two dedicated observers instead of using the app delegate.
     [[NSNotificationCenter defaultCenter] removeObserver:self];
