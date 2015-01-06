@@ -17,7 +17,7 @@ endif
 
 clean:
 ifeq ($(TARGETNAME),go)
-	cd go/src && /bin/bash clean.bash
+	cd go/src && ./clean.bash
 else
 ifeq ($(TARGETNAME),go-ipfs)
 	rm -rf go-ipfs/*
