@@ -13,6 +13,7 @@
 		28AB2C141A4EF4BB006D241F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AB2C131A4EF4BB006D241F /* main.m */; };
 		28AB2C171A4EF4BB006D241F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AB2C161A4EF4BB006D241F /* ViewController.m */; };
 		28AB2C191A4EF4BB006D241F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28AB2C181A4EF4BB006D241F /* Images.xcassets */; };
+		28B014331A73075B00FEEE56 /* asterist_wait_pid.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28B014311A72F50300FEEE56 /* asterist_wait_pid.py */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		28CDF17D1A50AA58006B019A /* go in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28CDF1771A50AA2A006B019A /* go */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		28CDF17E1A50AA58006B019A /* node in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28CDF1791A50AA36006B019A /* node */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		28CDF1BF1A50BAE1006B019A /* ipfs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28CDF1BB1A50BACD006B019A /* ipfs */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -57,6 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
+				28B014331A73075B00FEEE56 /* asterist_wait_pid.py in CopyFiles */,
 				28CDF1BF1A50BAE1006B019A /* ipfs in CopyFiles */,
 				28CDF17D1A50AA58006B019A /* go in CopyFiles */,
 				28CDF17E1A50AA58006B019A /* node in CopyFiles */,
@@ -76,6 +78,7 @@
 		28AB2C151A4EF4BB006D241F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../Asterist/ViewController.h; sourceTree = "<group>"; };
 		28AB2C161A4EF4BB006D241F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../Asterist/ViewController.m; sourceTree = "<group>"; };
 		28AB2C181A4EF4BB006D241F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Asterist/Images.xcassets; sourceTree = "<group>"; };
+		28B014311A72F50300FEEE56 /* asterist_wait_pid.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = asterist_wait_pid.py; sourceTree = "<group>"; };
 		28CDF1771A50AA2A006B019A /* go */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = go; path = External/go/bin/go; sourceTree = "<group>"; };
 		28CDF1791A50AA36006B019A /* node */ = {isa = PBXFileReference; lastKnownFileType = text; name = node; path = External/node/node; sourceTree = "<group>"; };
 		28CDF1BB1A50BACD006B019A /* ipfs */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = ipfs; path = "External/go-ipfs/bin/ipfs"; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 		28AB2C0E1A4EF4BB006D241F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				28B014311A72F50300FEEE56 /* asterist_wait_pid.py */,
 				28AB2C0F1A4EF4BB006D241F /* Info.plist */,
 				28AB2C131A4EF4BB006D241F /* main.m */,
 			);

@@ -22,6 +22,8 @@
     // This is where all our executables (go, ipfs, node) will be launched from.
     [self setExecutablesPath:[[[NSBundle mainBundle] executablePath] stringByDeletingLastPathComponent]];
 
+    [self setWaitForPidPath:[[self executablesPath] stringByAppendingPathComponent:@"asterist_wait_pid.py"]];
+
     [self launchIpfs:@[@"daemon"]];
 }
 
@@ -144,6 +146,13 @@
     [task launch];
 
     NSLog(@"%@ started with pid %i", taskName, [task processIdentifier]);
+
+    // Start a new watch script to make the task exit when Asterist does, even
+    // if it's the result of a crash or other unexpected behavior.
+    [NSTask launchedTaskWithLaunchPath:[self waitForPidPath]
+                             arguments:@[[NSString stringWithFormat:@"%i", [[NSProcessInfo processInfo] processIdentifier]], // Current process pid.
+                                         [NSString stringWithFormat:@"%i", [task processIdentifier]] // The newly spawned process pid.
+                                        ]];
 
     [outFile waitForDataInBackgroundAndNotify];
 }

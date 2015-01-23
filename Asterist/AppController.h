@@ -15,6 +15,7 @@
 @property (weak) IBOutlet ViewController *mainViewController;
 
 @property NSString *executablesPath;
+@property NSString *waitForPidPath;
 @property NSTask *ipfs;
 @property NSTask *webInterface;
 @property NSTimer *webInterfaceTimer;
