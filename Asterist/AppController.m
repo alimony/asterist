@@ -170,7 +170,7 @@
         if ([outputString containsString:@"ipfs not initialized"]) {
             [self setupIpfs];
         }
-        else if ([outputString containsString:@"daemon listening"]) {
+        else if ([outputString containsString:@"server listening"]) {
             [self launchWebInterface];
         }
         else if ([outputString containsString:@"Using gulpfile"]) {
