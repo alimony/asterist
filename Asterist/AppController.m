@@ -158,7 +158,7 @@
 }
 
 - (void)taskData:(NSNotification *)notification {
-    NSLog(@"Received data from task");
+    NSLog(@"Received data from task:");
 
     NSFileHandle *fileHandle = (NSFileHandle *)[notification object];
     NSData *data = [fileHandle availableData];
@@ -170,7 +170,7 @@
         if ([outputString containsString:@"ipfs not initialized"]) {
             [self setupIpfs];
         }
-        else if ([outputString containsString:@"daemon listening"]) {
+        else if ([outputString containsString:@"server listening"]) {
             [self launchWebInterface];
         }
         else if ([outputString containsString:@"Using gulpfile"]) {
@@ -182,6 +182,8 @@
                                                                        repeats:YES]];
         }
     }
+
+    [fileHandle waitForDataInBackgroundAndNotify];
 }
 
 - (void)taskTerminated:(NSNotification *)notification {
