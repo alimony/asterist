@@ -662,10 +662,10 @@
                         </connections>
                     </webView>
                     <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="hEg-3Q-ZFe">
-                        <rect key="frame" x="509" y="547" width="32" height="32"/>
+                        <rect key="frame" x="509" y="396" width="32" height="32"/>
                     </progressIndicator>
                     <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vbg-pT-fH0">
-                        <rect key="frame" x="484" y="522" width="82" height="17"/>
+                        <rect key="frame" x="484" y="371" width="82" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Launching…" id="d2Q-Lr-tn1">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -677,7 +677,7 @@
                     <constraint firstItem="vbg-pT-fH0" firstAttribute="top" secondItem="hEg-3Q-ZFe" secondAttribute="bottom" constant="8" id="Dkr-Ka-SQ5"/>
                     <constraint firstItem="hEg-3Q-ZFe" firstAttribute="centerX" secondItem="TtK-UJ-xNk" secondAttribute="centerX" id="M17-g5-5aS"/>
                     <constraint firstAttribute="trailing" secondItem="TtK-UJ-xNk" secondAttribute="trailing" id="OFQ-FA-bP5"/>
-                    <constraint firstItem="hEg-3Q-ZFe" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="221" id="Wp8-7M-hrf"/>
+                    <constraint firstItem="hEg-3Q-ZFe" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="372" id="Wp8-7M-hrf"/>
                     <constraint firstAttribute="bottom" secondItem="TtK-UJ-xNk" secondAttribute="bottom" id="aB6-AN-d9c"/>
                     <constraint firstItem="TtK-UJ-xNk" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="aXK-XO-8mL"/>
                     <constraint firstItem="TtK-UJ-xNk" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="itM-KG-Kvu"/>
