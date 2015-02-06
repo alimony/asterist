@@ -1,11 +1,15 @@
 # Asterist
 
-This is currently just a proof of concept on bundling everything necessary to run [IPFS](https://github.com/jbenet/ipfs) on your Mac without having to install anything else. These are the bundled components:
+Asterist is an [IPFS](https://github.com/jbenet/ipfs) client for Mac. It should currently be considered pre-alpha software, or rather a proof of concept; it is nowhere near usable yet.
 
-[go](https://github.com/golang/go) – included as a submodule and used to build/install:
+The idea is to bundle [the reference implementation](https://github.com/jbenet/go-ipfs) of IPFS with the application so that no one has to build or download anything except Asterist itself.
 
-[go-ipfs](https://github.com/jbenet/go-ipfs) – the reference implementation of IPFS, written in Go
+Building Asterist involves fetching [go](https://github.com/golang/go) as a submodule and then installing [go-ipfs](https://github.com/jbenet/go-ipfs) through the [recommended method](https://github.com/jbenet/go-ipfs#install):
 
-Building the project will fetch and build all of these, as well as copy them to the built application bundle so it will run independently on any computer. The Cocoa application itself is a simple wrapper that launches all necessary processes and then displays the locally running web interface in an embedded web view.
+    go get -u github.com/jbenet/go-ipfs/cmd/ipfs
 
-**I want to point out again that this is just a proof of concept and should not be considered usable software.** Hopefully it can stabilize along with the implementation of IPFS and turn into an actual client someday. For example, the entire web interface should probably go away, letting the Cocoa application communicate directly with go-ipfs instead.
+The resulting `ipfs` binary is copied to the application bundle, and we're good to go.
+
+Launching Asterist will also launch `ipfs` in daemon mode and then communicate with it through HTTP, which happens to be how the command line version of `ipfs` interfaces with itself when the daemon is running. All commands conveniently map to HTTP endpoints, meaning that support for any command in `ipfs` is relatively easy to add to Asterist.
+
+**I want to stress again that this is just a proof of concept and should not be considered usable software.** Hopefully it can stabilize along with the implementation of IPFS and turn into an actual client someday.
