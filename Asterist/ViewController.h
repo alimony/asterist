@@ -8,12 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class WebView;
-
 @interface ViewController : NSViewController
 
-@property (weak) IBOutlet WebView *webView;
-@property (weak) IBOutlet NSProgressIndicator *spinner;
-@property (weak) IBOutlet NSTextField *spinnerText;
+@property (weak) IBOutlet NSTabView *tabView;
+@property (weak) IBOutlet NSTableView *swarmTable;
+@property (weak) IBOutlet NSProgressIndicator *loadingIndicator;
+@property (weak) IBOutlet NSTextField *loadingTextField;
 
 @end
