@@ -1,7 +1,3 @@
-[submodule "External/ipfs-webui"]
-	path = External/ipfs-webui
-	url = https://github.com/mappum/ipfs-webui.git
-	ignore = dirty
 [submodule "External/node/npm"]
 	path = External/node/npm
 	url = https://github.com/npm/npm.git
@@ -9,8 +5,4 @@
 [submodule "External/go"]
 	path = External/go
 	url = https://github.com/golang/go.git
-	ignore = dirty
-[submodule "External/node"]
-	path = External/node
-	url = https://github.com/joyent/node.git
 	ignore = dirty
