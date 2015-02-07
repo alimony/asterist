@@ -766,7 +766,11 @@
                                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                                     <connections>
-                                                                                        <binding destination="Lg5-n4-l4d" name="value" keyPath="objectValue.port" id="C57-3K-0kw"/>
+                                                                                        <binding destination="Lg5-n4-l4d" name="value" keyPath="objectValue.port" id="vVj-wy-5vh">
+                                                                                            <dictionary key="options">
+                                                                                                <string key="NSValueTransformerName">NSStringValueTransformer</string>
+                                                                                            </dictionary>
+                                                                                        </binding>
                                                                                     </connections>
                                                                                 </textFieldCell>
                                                                             </textField>
