@@ -20,6 +20,30 @@
     return self;
 }
 
+- (void)startUpdateTimer {
+    NSLog(@"Starting view update timer");
+    [self stopUpdateTimer];
+    [self setUpdateTimer:[NSTimer scheduledTimerWithTimeInterval:2.0
+                                                          target:self
+                                                        selector:@selector(updateViews)
+                                                        userInfo:nil
+                                                         repeats:YES]];
+}
+
+- (void)stopUpdateTimer {
+    if ([self updateTimer]) {
+        NSLog(@"Stopping view update timer");
+        if ([[self updateTimer] isValid]) {
+            [[self updateTimer] invalidate];
+        }
+        [self setUpdateTimer:nil];
+    }
+}
+
+- (void)updateViews {
+    [self daemonGetSwarm];
+}
+
 // This is a common method for sending an HTTP request to the IPFS daemon. It is
 // passed a callback block that is executed on success, while errors are handled
 // by a common handler. The reason for having this in a separate method is to

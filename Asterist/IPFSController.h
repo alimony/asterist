@@ -12,8 +12,12 @@
 
 @interface IPFSController : NSObject
 
+- (void)startUpdateTimer;
+- (void)stopUpdateTimer;
+- (void)updateViews;
 - (void)daemonGetSwarm;
 
+@property NSTimer *updateTimer;
 @property AFHTTPRequestOperationManager *httpManager;
 @property NSArray *swarm;
 

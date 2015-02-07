@@ -122,7 +122,7 @@
             [self.viewController.loadingIndicator stopAnimation:self];
             [[[self viewController] loadingTextField] setHidden:NO];
             [[[self viewController] tabView] setHidden:NO];
-            [[self ipfsController] daemonGetSwarm];
+            [[self ipfsController] startUpdateTimer];
         }
     }
 
