@@ -15,4 +15,14 @@
 @property (weak) IBOutlet NSProgressIndicator *loadingIndicator;
 @property (weak) IBOutlet NSTextField *loadingTextField;
 
+// Home
+@property (weak) IBOutlet NSTextField *peerIdField;
+@property (weak) IBOutlet NSTextField *locationField;
+@property (weak) IBOutlet NSTextField *agentVersionField;
+@property (weak) IBOutlet NSTextField *protocolVersionField;
+@property (weak) IBOutlet NSTextField *publicKeyField;
+
+// Connections
+@property (weak) IBOutlet NSTableView *swarmTable;
+
 @end

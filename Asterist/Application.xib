@@ -691,6 +691,9 @@
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <connections>
+                                                            <binding destination="gAh-fU-2Rs" name="value" keyPath="agentVersion" id="2EP-wK-gd4"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZXr-ry-fUw">
                                                         <rect key="frame" x="16" y="226" width="57" height="17"/>
@@ -707,6 +710,9 @@
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <connections>
+                                                            <binding destination="gAh-fU-2Rs" name="value" keyPath="peerId" id="V2U-lj-lPY"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DLs-HQ-Z3L">
                                                         <rect key="frame" x="16" y="139" width="116" height="17"/>
@@ -723,6 +729,9 @@
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <connections>
+                                                            <binding destination="gAh-fU-2Rs" name="value" keyPath="location" id="4SR-7Q-6Vv"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oZD-Ji-RLp">
                                                         <rect key="frame" x="136" y="139" width="588" height="17"/>
@@ -731,6 +740,9 @@
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <connections>
+                                                            <binding destination="gAh-fU-2Rs" name="value" keyPath="protocolVersion" id="rw9-fi-B6h"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Vp-Ta-TVJ">
                                                         <rect key="frame" x="16" y="164" width="99" height="17"/>
@@ -759,6 +771,9 @@
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
+                                                        <connections>
+                                                            <binding destination="gAh-fU-2Rs" name="value" keyPath="publicKey" id="3rY-WZ-PnB"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </view>
@@ -1069,6 +1084,9 @@
                                 </view>
                             </tabViewItem>
                         </tabViewItems>
+                        <connections>
+                            <outlet property="delegate" destination="kav-BY-FuC" id="tBU-KP-FxT"/>
+                        </connections>
                     </tabView>
                 </subviews>
                 <constraints>
@@ -1093,8 +1111,14 @@
         </customObject>
         <viewController nibName="" id="kav-BY-FuC" userLabel="Main View Controller" customClass="ViewController">
             <connections>
+                <outlet property="agentVersionField" destination="5bl-kV-tyR" id="g0T-i8-8Q1"/>
+                <outlet property="ipfsController" destination="gAh-fU-2Rs" id="vs7-wt-h1d"/>
                 <outlet property="loadingIndicator" destination="slG-6k-gfr" id="InN-Tx-aUK"/>
                 <outlet property="loadingTextField" destination="EqA-MI-5TW" id="LGG-Ie-1TV"/>
+                <outlet property="locationField" destination="290-RQ-GIK" id="PiY-kR-xDy"/>
+                <outlet property="peerIdField" destination="c5g-Nz-eYz" id="FoL-fb-x9O"/>
+                <outlet property="protocolVersionField" destination="oZD-Ji-RLp" id="bSR-Ro-DmT"/>
+                <outlet property="publicKeyField" destination="sUU-L5-RWq" id="IHp-pb-Vcp"/>
                 <outlet property="swarmTable" destination="mW0-FF-zQ7" id="iAa-8t-gd2"/>
                 <outlet property="tabView" destination="BMW-0h-zkf" id="jS4-PK-9hG"/>
             </connections>
