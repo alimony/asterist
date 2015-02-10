@@ -8,10 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@class IPFSController;
+
+@interface ViewController : NSViewController <NSTabViewDelegate>
+
+- (void)updateViewForLabel:(NSString *)label;
+
+@property (weak) IBOutlet IPFSController *ipfsController;
 
 @property (weak) IBOutlet NSTabView *tabView;
-@property (weak) IBOutlet NSTableView *swarmTable;
 @property (weak) IBOutlet NSProgressIndicator *loadingIndicator;
 @property (weak) IBOutlet NSTextField *loadingTextField;
 

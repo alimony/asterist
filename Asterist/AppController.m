@@ -121,6 +121,7 @@
             NSLog(@"Everything is running");
             [self.viewController.loadingIndicator stopAnimation:self];
             [[[self viewController] loadingTextField] setHidden:YES];
+            [[self viewController] updateViewForLabel:@"Home"];
             [[[self viewController] tabView] setHidden:NO];
             [[self ipfsController] startUpdateTimer];
         }
