@@ -55,6 +55,18 @@
     }];
 }
 
+// Get local user data such as peer ID, agent/protocol versions, etc.
+- (void)daemonGetId {
+    [self daemonCommand:@"http://localhost:5001/api/v0/id" successCallback:
+     ^(AFHTTPRequestOperation *operation, id responseObject) {
+         [self setPeerId:responseObject[@"ID"]];
+         [self setLocation:@"Unknown"]; // TODO: Where do we get location from?
+         [self setAgentVersion:responseObject[@"AgentVersion"]];
+         [self setProtocolVersion:responseObject[@"ProtocolVersion"]];
+         [self setPublicKey:responseObject[@"PublicKey"]];
+     }];
+}
+
 // Get the current list of peers in the swarm.
 - (void)daemonGetSwarm {
     [self daemonCommand:@"http://localhost:5001/api/v0/swarm/peers" successCallback:
