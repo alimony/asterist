@@ -643,7 +643,6 @@
         </menu>
         <window title="Asterist" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="200" width="800" height="500"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <value key="minSize" type="size" width="800" height="500"/>
@@ -655,7 +654,13 @@
                         <rect key="frame" x="13" y="10" width="774" height="484"/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
-                            <tabViewItem label="Swarm" identifier="1" id="Ecj-D5-DH5">
+                            <tabViewItem label="Home" identifier="" id="SPY-qk-Ctr">
+                                <view key="view" id="jlA-OG-d1R">
+                                    <rect key="frame" x="10" y="33" width="754" height="438"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Connections" identifier="1" id="Ecj-D5-DH5">
                                 <view key="view" id="wQC-Zc-12a">
                                     <rect key="frame" x="10" y="33" width="754" height="438"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -885,13 +890,37 @@
                                     </constraints>
                                 </view>
                             </tabViewItem>
+                            <tabViewItem label="Files" identifier="" id="mA7-Xq-Ivv">
+                                <view key="view" id="f8E-cF-Dl4">
+                                    <rect key="frame" x="10" y="33" width="754" height="438"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="DAG" identifier="" id="lIV-P5-pdG">
+                                <view key="view" id="vw8-Fk-by2">
+                                    <rect key="frame" x="10" y="33" width="754" height="438"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Config" identifier="" id="6M1-fu-PPs">
+                                <view key="view" id="zNv-e3-24Q">
+                                    <rect key="frame" x="10" y="33" width="754" height="438"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Logs" identifier="" id="gZk-W1-1Rw">
+                                <view key="view" id="01I-Ya-uIG">
+                                    <rect key="frame" x="10" y="33" width="754" height="438"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
                         </tabViewItems>
                     </tabView>
                     <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="slG-6k-gfr">
-                        <rect key="frame" x="384" y="234" width="32" height="32"/>
+                        <rect key="frame" x="384" y="246" width="32" height="32"/>
                     </progressIndicator>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EqA-MI-5TW">
-                        <rect key="frame" x="343" y="209" width="115" height="17"/>
+                        <rect key="frame" x="343" y="221" width="115" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Launching IPFS…" id="Gjt-EL-DPF">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -901,8 +930,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="BMW-0h-zkf" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="12" symbolic="YES" id="1TD-6E-VKI"/>
+                    <constraint firstAttribute="centerY" secondItem="slG-6k-gfr" secondAttribute="centerY" constant="12" id="1l3-21-Ut4"/>
                     <constraint firstAttribute="trailing" secondItem="BMW-0h-zkf" secondAttribute="trailing" constant="20" symbolic="YES" id="51A-vg-gGf"/>
-                    <constraint firstAttribute="centerY" secondItem="slG-6k-gfr" secondAttribute="centerY" id="83a-ce-S7C"/>
                     <constraint firstItem="EqA-MI-5TW" firstAttribute="centerX" secondItem="slG-6k-gfr" secondAttribute="centerX" id="EiG-LF-bqd"/>
                     <constraint firstAttribute="bottom" secondItem="BMW-0h-zkf" secondAttribute="bottom" constant="20" symbolic="YES" id="HUT-Se-hjn"/>
                     <constraint firstAttribute="centerX" secondItem="slG-6k-gfr" secondAttribute="centerX" id="e46-t1-qpF"/>
@@ -910,7 +939,7 @@
                     <constraint firstItem="BMW-0h-zkf" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" symbolic="YES" id="pqu-U7-3I9"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="-90" y="-32"/>
+            <point key="canvasLocation" x="-1209" y="-738"/>
         </window>
         <customObject id="tHl-4U-BfT" customClass="AppController">
             <connections>
@@ -922,7 +951,7 @@
         <viewController nibName="" id="kav-BY-FuC" userLabel="Main View Controller" customClass="ViewController">
             <connections>
                 <outlet property="loadingIndicator" destination="slG-6k-gfr" id="InN-Tx-aUK"/>
-                <outlet property="loadingTextField" destination="EqA-MI-5TW" id="bW9-HQ-Qdr"/>
+                <outlet property="loadingTextField" destination="EqA-MI-5TW" id="LGG-Ie-1TV"/>
                 <outlet property="swarmTable" destination="mW0-FF-zQ7" id="iAa-8t-gd2"/>
                 <outlet property="tabView" destination="BMW-0h-zkf" id="jS4-PK-9hG"/>
             </connections>
