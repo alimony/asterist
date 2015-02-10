@@ -120,7 +120,7 @@
         else if ([outputString containsString:@"server listening"]) {
             NSLog(@"Everything is running");
             [self.viewController.loadingIndicator stopAnimation:self];
-            [[[self viewController] loadingTextField] setHidden:NO];
+            [[[self viewController] loadingTextField] setHidden:YES];
             [[[self viewController] tabView] setHidden:NO];
             [[self ipfsController] startUpdateTimer];
         }
