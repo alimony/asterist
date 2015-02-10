@@ -650,6 +650,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="slG-6k-gfr">
+                        <rect key="frame" x="384" y="246" width="32" height="32"/>
+                    </progressIndicator>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EqA-MI-5TW">
+                        <rect key="frame" x="343" y="221" width="115" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Launching IPFS…" id="Gjt-EL-DPF">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                     <tabView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BMW-0h-zkf">
                         <rect key="frame" x="13" y="10" width="774" height="484"/>
                         <font key="font" metaFont="system"/>
@@ -658,6 +669,129 @@
                                 <view key="view" id="jlA-OG-d1R">
                                     <rect key="frame" x="10" y="33" width="754" height="438"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <box autoresizesSubviews="NO" ambiguous="YES" misplaced="YES" title="Node info" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="HIj-IB-D9I">
+                                            <rect key="frame" x="6" y="169" width="742" height="269"/>
+                                            <view key="contentView">
+                                                <rect key="frame" x="1" y="1" width="740" height="253"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wot-ln-AVO">
+                                                        <rect key="frame" x="16" y="189" width="66" height="17"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Location:" id="em3-eA-eef">
+                                                            <font key="font" metaFont="systemBold"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5bl-kV-tyR">
+                                                        <rect key="frame" x="136" y="164" width="588" height="17"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0.1.7" id="Z0Q-Ck-G7b">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZXr-ry-fUw">
+                                                        <rect key="frame" x="16" y="226" width="57" height="17"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Peer ID:" id="7V3-Vc-lja">
+                                                            <font key="font" metaFont="systemBold"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-Nz-eYz">
+                                                        <rect key="frame" x="136" y="226" width="588" height="17"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="QmdabcZp5abc8dmabcCUwabcqcZabc5a5abcSZNabch7Bq" id="DjB-fN-paO">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DLs-HQ-Z3L">
+                                                        <rect key="frame" x="16" y="139" width="116" height="17"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Protocol version:" id="cg7-XR-zJ3">
+                                                            <font key="font" metaFont="systemBold"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="290-RQ-GIK">
+                                                        <rect key="frame" x="136" y="189" width="588" height="17"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Unknown" id="7eo-Hs-Qky">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oZD-Ji-RLp">
+                                                        <rect key="frame" x="136" y="139" width="588" height="17"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0.1.0" id="2yg-3j-HBm">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Vp-Ta-TVJ">
+                                                        <rect key="frame" x="16" y="164" width="99" height="17"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Agent version:" id="mj9-HW-ocm">
+                                                            <font key="font" metaFont="systemBold"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ark-Jj-ajq">
+                                                        <rect key="frame" x="16" y="102" width="76" height="17"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Public key:" id="9Un-Mc-b0j">
+                                                            <font key="font" metaFont="systemBold"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUU-L5-RWq">
+                                                        <rect key="frame" x="138" y="19" width="584" height="100"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="a7z-sU-F3u"/>
+                                                        </constraints>
+                                                        <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="lB2-9y-UPd">
+                                                            <font key="font" metaFont="system"/>
+                                                            <mutableString key="title">abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc</mutableString>
+                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </subviews>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstItem="290-RQ-GIK" firstAttribute="leading" secondItem="Wot-ln-AVO" secondAttribute="trailing" constant="58" id="KRz-jc-Yub"/>
+                                                <constraint firstItem="oZD-Ji-RLp" firstAttribute="leading" secondItem="DLs-HQ-Z3L" secondAttribute="trailing" constant="8" id="Kcb-ZI-bRr"/>
+                                                <constraint firstItem="c5g-Nz-eYz" firstAttribute="leading" secondItem="ZXr-ry-fUw" secondAttribute="trailing" constant="67" id="f2h-d2-4Z5"/>
+                                                <constraint firstItem="5bl-kV-tyR" firstAttribute="leading" secondItem="9Vp-Ta-TVJ" secondAttribute="trailing" constant="25" id="g6d-dG-2cR"/>
+                                                <constraint firstAttribute="trailing" secondItem="sUU-L5-RWq" secondAttribute="trailing" constant="16" id="kOv-SU-uvY"/>
+                                                <constraint firstItem="sUU-L5-RWq" firstAttribute="leading" secondItem="Ark-Jj-ajq" secondAttribute="trailing" constant="48" id="uFX-s7-Lks"/>
+                                            </constraints>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </box>
+                                        <box autoresizesSubviews="NO" ambiguous="YES" misplaced="YES" title="Network addresses" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="1el-Rl-XE2">
+                                            <rect key="frame" x="6" y="5" width="742" height="160"/>
+                                            <view key="contentView">
+                                                <rect key="frame" x="1" y="1" width="740" height="144"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                            <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </box>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1el-Rl-XE2" firstAttribute="leading" secondItem="jlA-OG-d1R" secondAttribute="leading" constant="9" id="31N-ia-vsY"/>
+                                        <constraint firstAttribute="trailing" secondItem="HIj-IB-D9I" secondAttribute="trailing" constant="9" id="31V-Fa-ngO"/>
+                                        <constraint firstAttribute="trailing" secondItem="1el-Rl-XE2" secondAttribute="trailing" constant="9" id="EFa-aX-usb"/>
+                                        <constraint firstAttribute="bottom" secondItem="1el-Rl-XE2" secondAttribute="bottom" constant="9" id="GnE-1j-C8Q"/>
+                                        <constraint firstItem="1el-Rl-XE2" firstAttribute="top" secondItem="HIj-IB-D9I" secondAttribute="bottom" constant="8" id="Vy0-wo-Qd8"/>
+                                        <constraint firstItem="HIj-IB-D9I" firstAttribute="top" secondItem="jlA-OG-d1R" secondAttribute="top" id="fRa-tN-8xP"/>
+                                        <constraint firstItem="HIj-IB-D9I" firstAttribute="leading" secondItem="jlA-OG-d1R" secondAttribute="leading" constant="9" id="pHf-lb-Cg6"/>
+                                    </constraints>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Connections" identifier="1" id="Ecj-D5-DH5">
@@ -916,17 +1050,6 @@
                             </tabViewItem>
                         </tabViewItems>
                     </tabView>
-                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="slG-6k-gfr">
-                        <rect key="frame" x="384" y="246" width="32" height="32"/>
-                    </progressIndicator>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EqA-MI-5TW">
-                        <rect key="frame" x="343" y="221" width="115" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Launching IPFS…" id="Gjt-EL-DPF">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="BMW-0h-zkf" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="12" symbolic="YES" id="1TD-6E-VKI"/>
