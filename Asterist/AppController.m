@@ -119,8 +119,12 @@
         }
         else if ([outputString containsString:@"API server listening"]) {
             NSLog(@"Everything is running");
+
+            // Hide the loading spinner and text.
             [self.viewController.loadingIndicator stopAnimation:self];
             [[[self viewController] loadingTextField] setHidden:YES];
+
+            // Update the initially selected tab and display the tab view.
             NSString *currentlySelectedLabel = [[[[self viewController] tabView] selectedTabViewItem] label];
             [[self viewController] updateViewForLabel:currentlySelectedLabel];
             [[[self viewController] tabView] setHidden:NO];
