@@ -21,11 +21,18 @@
 // to set the initial view.
 - (void)updateViewForLabel:(NSString *)label {
     // TODO: This is just some fragile proof of concept code.
+
+    // Stop any timers if the view using that timer is not the selected one.
+    if (![label isEqualToString:@"Connections"]) {
+        [[self ipfsController] stopSwarmUpdateTimer];
+    }
+
     if ([label isEqualToString:@"Home"]) {
         [[self ipfsController] daemonGetId];
     }
     else if ([label isEqualToString:@"Connections"]) {
         [[self ipfsController] daemonGetSwarm];
+        [[self ipfsController] startSwarmUpdateTimer];
     }
 }
 

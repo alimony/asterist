@@ -20,40 +20,20 @@
     return self;
 }
 
-- (void)startUpdateTimer {
-    NSLog(@"Starting view update timer");
-    [self stopUpdateTimer];
-    [self setUpdateTimer:[NSTimer scheduledTimerWithTimeInterval:2.0
-                                                          target:self
-                                                        selector:@selector(updateViews)
-                                                        userInfo:nil
-                                                         repeats:YES]];
-}
-
-- (void)stopUpdateTimer {
-    if ([self updateTimer]) {
-        NSLog(@"Stopping view update timer");
-        if ([[self updateTimer] isValid]) {
-            [[self updateTimer] invalidate];
-        }
-        [self setUpdateTimer:nil];
-    }
-}
-
-- (void)updateViews {
-    [self daemonGetSwarm];
-}
-
 // This is a common method for sending an HTTP request to the IPFS daemon. It is
 // passed a callback block that is executed on success, while errors are handled
 // by a common handler. The reason for having this in a separate method is to
 // have a clear place for code that should run for all commands.
 - (void)daemonCommand:(NSString *)url successCallback:(void (^)(AFHTTPRequestOperation *operation, id responseObject))callbackBlock {
+    NSLog(@"Calling daemon: %@", url);
     [[self httpManager] GET:url parameters:nil success:callbackBlock failure:
     ^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
     }];
 }
+
+#pragma mark -
+#pragma mark Home
 
 // Get local user data such as peer ID, agent/protocol versions, etc.
 - (void)daemonGetId {
@@ -66,6 +46,9 @@
          [self setPublicKey:responseObject[@"PublicKey"]];
      }];
 }
+
+#pragma mark -
+#pragma mark Connections
 
 // Get the current list of peers in the swarm.
 - (void)daemonGetSwarm {
@@ -104,6 +87,26 @@
             [self setSwarm:addedPeers];
         }
     }];
+}
+
+- (void)startSwarmUpdateTimer {
+    NSLog(@"Starting connections view update timer");
+    [self stopSwarmUpdateTimer];
+    [self setUpdateSwarmTimer:[NSTimer scheduledTimerWithTimeInterval:2.0
+                                                               target:self
+                                                             selector:@selector(daemonGetSwarm)
+                                                             userInfo:nil
+                                                              repeats:YES]];
+}
+
+- (void)stopSwarmUpdateTimer {
+    if ([self updateSwarmTimer]) {
+        NSLog(@"Stopping connections view update timer");
+        if ([[self updateSwarmTimer] isValid]) {
+            [[self updateSwarmTimer] invalidate];
+        }
+        [self setUpdateSwarmTimer:nil];
+    }
 }
 
 @end

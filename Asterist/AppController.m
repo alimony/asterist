@@ -128,7 +128,6 @@
             NSString *currentlySelectedLabel = [[[[self viewController] tabView] selectedTabViewItem] label];
             [[self viewController] updateViewForLabel:currentlySelectedLabel];
             [[[self viewController] tabView] setHidden:NO];
-            [[self ipfsController] startUpdateTimer];
         }
     }
 

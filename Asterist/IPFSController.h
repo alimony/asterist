@@ -12,23 +12,21 @@
 
 @interface IPFSController : NSObject
 
-- (void)startUpdateTimer;
-- (void)stopUpdateTimer;
-- (void)updateViews;
-
-// Methods for communicating with the daemon.
-- (void)daemonGetId;
-- (void)daemonGetSwarm;
-
-@property NSTimer *updateTimer;
 @property AFHTTPRequestOperationManager *httpManager;
 
+// Home
+- (void)daemonGetId;
 @property NSString *peerId;
 @property NSString *location;
 @property NSString *agentVersion;
 @property NSString *protocolVersion;
 @property NSString *publicKey;
 
+// Connections
+- (void)daemonGetSwarm;
+- (void)startSwarmUpdateTimer;
+- (void)stopSwarmUpdateTimer;
 @property NSArray *swarm;
+@property NSTimer *updateSwarmTimer;
 
 @end
