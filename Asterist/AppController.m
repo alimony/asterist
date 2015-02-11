@@ -117,7 +117,7 @@
         if ([outputString containsString:@"ipfs not initialized"]) {
             [self setupIpfs];
         }
-        else if ([outputString containsString:@"server listening"]) {
+        else if ([outputString containsString:@"API server listening"]) {
             NSLog(@"Everything is running");
             [self.viewController.loadingIndicator stopAnimation:self];
             [[[self viewController] loadingTextField] setHidden:YES];
