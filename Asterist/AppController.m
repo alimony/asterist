@@ -64,6 +64,57 @@
     [self launchIpfs:@[@"daemon"]];
 }
 
+// Fetch the correct API server address from config. The daemon does not have to
+// be running for this to work.
+- (NSString *)getApiAddress {
+    NSLog(@"Getting ipfs config");
+
+    NSTask *getConfigIpfsTask = [[NSTask alloc] init];
+    [getConfigIpfsTask setLaunchPath:[[self ipfsDaemon] launchPath]];
+    [getConfigIpfsTask setArguments:@[@"config", @"show"]];
+
+    NSPipe *pipe = [NSPipe pipe];
+    [getConfigIpfsTask setStandardOutput:pipe];
+    NSFileHandle *outFile = [pipe fileHandleForReading];
+
+    [getConfigIpfsTask launch];
+    [getConfigIpfsTask waitUntilExit];
+
+    if ([getConfigIpfsTask terminationStatus] != 0) {
+        NSLog(@"Could not get ipfs config, aborting");
+        [NSApp terminate:nil];
+    }
+
+    NSError *error = nil;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:[outFile readDataToEndOfFile]
+                                                    options:0
+                                                      error:&error];
+
+    if (error) {
+        NSLog(@"Could not interpret config data, aborting");
+        [NSApp terminate:nil];
+    }
+
+    if (![jsonObject isKindOfClass:[NSDictionary class]]) {
+        NSLog(@"Could not create dictionary from config JSON data, aborting");
+        [NSApp terminate:nil];
+    }
+
+    NSDictionary *configData = jsonObject;
+    NSDictionary *addresses = configData[@"Addresses"];
+    NSString *api = addresses[@"API"];
+
+    // We now have something like this:
+    // "/ip4/127.0.0.1/tcp/5001"
+
+    NSArray *parts = [api componentsSeparatedByString:@"/"];
+
+    NSString *host = parts[2];
+    NSString *port = parts[4];
+
+    return [NSString stringWithFormat:@"http://%@:%@", host, port];
+}
+
 - (void)launchIpfs:(NSArray *)arguments {
     NSLog(@"Launching ipfs");
 
@@ -120,6 +171,8 @@
         else if ([outputString containsString:@"API server listening"]) {
             NSLog(@"Everything is running");
 
+            [[self ipfsController] setApiAddress:[self getApiAddress]];
+
             // Hide the loading spinner and text.
             [self.viewController.loadingIndicator stopAnimation:self];
             [[[self viewController] loadingTextField] setHidden:YES];
@@ -136,7 +189,7 @@
 
 - (void)ipfsDaemonDidTerminate:(NSNotification *)notification {
     NSTask *task = (NSTask *)[notification object];
-    NSLog(@"The ipfs demon with pid %d terminated with exit status %i", [task processIdentifier], [task terminationStatus]);
+    NSLog(@"The ipfs daemon with pid %d terminated with exit status %i", [task processIdentifier], [task terminationStatus]);
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

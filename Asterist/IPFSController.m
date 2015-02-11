@@ -14,6 +14,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
+        [self setApiAddress:nil];
         [self setHttpManager:[AFHTTPRequestOperationManager manager]];
     }
 
@@ -24,8 +25,16 @@
 // passed a callback block that is executed on success, while errors are handled
 // by a common handler. The reason for having this in a separate method is to
 // have a clear place for code that should run for all commands.
-- (void)daemonCommand:(NSString *)url successCallback:(void (^)(AFHTTPRequestOperation *operation, id responseObject))callbackBlock {
+- (void)daemonCommand:(NSString *)path successCallback:(void (^)(AFHTTPRequestOperation *operation, id responseObject))callbackBlock {
+    if (![self apiAddress]) {
+        NSLog(@"Cannot send command to daemon since IPFS controller has no API address");
+        return;
+    }
+
+    NSString *url = [NSString stringWithFormat:@"%@%@", [self apiAddress], path];
+
     NSLog(@"Calling daemon: %@", url);
+
     [[self httpManager] GET:url parameters:nil success:callbackBlock failure:
     ^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@", error);
@@ -37,7 +46,7 @@
 
 // Get local user data such as peer ID, agent/protocol versions, etc.
 - (void)daemonGetId {
-    [self daemonCommand:@"http://localhost:5001/api/v0/id" successCallback:
+    [self daemonCommand:@"/api/v0/id" successCallback:
      ^(AFHTTPRequestOperation *operation, id responseObject) {
          [self setPeerId:responseObject[@"ID"]];
          [self setLocation:@"Unknown"]; // TODO: Where do we get location from?
@@ -52,7 +61,7 @@
 
 // Get the current list of peers in the swarm.
 - (void)daemonGetSwarm {
-    [self daemonCommand:@"http://localhost:5001/api/v0/swarm/peers" successCallback:
+    [self daemonCommand:@"/api/v0/swarm/peers" successCallback:
     ^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *strings = responseObject[@"Strings"];
 
@@ -82,7 +91,7 @@
                 [addedPeers addObject:newPeer];
             }
             
-            NSLog(@"Adding peers to swarm: %@", addedPeers);
+            NSLog(@"Current peers in swarm: %@", addedPeers);
             
             [self setSwarm:addedPeers];
         }

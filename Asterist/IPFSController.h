@@ -14,6 +14,10 @@
 
 @property AFHTTPRequestOperationManager *httpManager;
 
+// This is where API calls should be made, i.e. where the daemon is listening.
+// We will fetch this value from the daemon config on launch.
+@property NSString *apiAddress;
+
 // Home
 - (void)daemonGetId;
 @property NSString *peerId;
