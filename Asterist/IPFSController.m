@@ -8,6 +8,7 @@
 
 #import <AFNetworking.h>
 #import "IPFSController.h"
+#import "IPFSObject.h"
 #import "IPFSPeer.h"
 
 @implementation IPFSController
@@ -47,13 +48,13 @@
 // Get local user data such as peer ID, agent/protocol versions, etc.
 - (void)daemonGetId {
     [self daemonCommand:@"/api/v0/id" successCallback:
-     ^(AFHTTPRequestOperation *operation, id responseObject) {
-         [self setPeerId:responseObject[@"ID"]];
-         [self setLocation:@"Unknown"]; // TODO: Where do we get location from?
-         [self setAgentVersion:responseObject[@"AgentVersion"]];
-         [self setProtocolVersion:responseObject[@"ProtocolVersion"]];
-         [self setPublicKey:responseObject[@"PublicKey"]];
-     }];
+    ^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self setPeerId:responseObject[@"ID"]];
+        [self setLocation:@"Unknown"]; // TODO: Where do we get location from?
+        [self setAgentVersion:responseObject[@"AgentVersion"]];
+        [self setProtocolVersion:responseObject[@"ProtocolVersion"]];
+        [self setPublicKey:responseObject[@"PublicKey"]];
+    }];
 }
 
 #pragma mark -
@@ -76,17 +77,17 @@
                 NSArray *parts = [peerString componentsSeparatedByString:@"/"];
 
                 if ([parts[1] isEqualToString:@"ip6"]) {
-                    newPeer.ipProtocolVersion = @6;
+                    [newPeer setIpProtocolVersion:@6];
                 }
                 else {
-                    newPeer.ipProtocolVersion = @4;
+                    [newPeer setIpProtocolVersion:@4];
                 }
 
-                newPeer.host = parts[2];
-                newPeer.networkProtocol = parts[3];
-                newPeer.port = @([parts[4] integerValue]);
+                [newPeer setHost:parts[2]];
+                [newPeer setNetworkProtocol:parts[3]];
+                [newPeer setPort:@([parts[4] integerValue])];
                 // For now, skip parts[5]: "ipfs"
-                newPeer.peerId = parts[6];
+                [newPeer setPeerId:parts[6]];
 
                 [addedPeers addObject:newPeer];
             }
@@ -116,6 +117,65 @@
         }
         [self setUpdateSwarmTimer:nil];
     }
+}
+
+#pragma mark -
+#pragma mark Files
+
+// Get a list of pinned files.
+- (void)daemonGetPinnedFiles {
+    [self daemonCommand:@"/api/v0/pin/ls" successCallback:
+    ^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *keys = responseObject[@"Keys"];
+        
+        if ([keys count] > 0) {
+            NSMutableArray *addedObjects = [NSMutableArray array];
+            
+            for (NSString *objectId in keys) {
+                IPFSObject *newObject = [[IPFSObject alloc] init];
+                [newObject setObjectId:objectId];
+                [addedObjects addObject:newObject];
+            }
+            
+            NSLog(@"Pinned files: %@", addedObjects);
+            
+            [self setPinnedFiles:addedObjects];
+        }
+    }];
+}
+
+// Get a list of all local files.
+- (void)daemonGetLocalFiles {
+    // TODO: Something smarter than...
+    [[self httpManager] setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+    
+    [self daemonCommand:@"/api/v0/refs/local" successCallback:
+    ^(AFHTTPRequestOperation *operation, id responseObject) {
+        // TODO: Why are these not returned by ipfs as e.g. JSON?
+        NSString *responseString = [[NSString alloc] initWithData:responseObject
+                                                         encoding:NSUTF8StringEncoding];
+         
+        NSArray *objectIds = [responseString componentsSeparatedByString:@"\n"];
+         
+        if ([objectIds count] > 0) {
+            NSMutableArray *addedObjects = [NSMutableArray array];
+             
+            for (NSString *objectId in objectIds) {
+                if ([objectId length] > 0) {
+                    IPFSObject *newObject = [[IPFSObject alloc] init];
+                    [newObject setObjectId:objectId];
+                    [addedObjects addObject:newObject];
+                }
+            }
+             
+            NSLog(@"All local files: %@", addedObjects);
+             
+            [self setLocalFiles:addedObjects];
+        }
+    }];
+    
+    // TODO: ...and then:
+    [[self httpManager] setResponseSerializer:[AFJSONResponseSerializer serializer]];
 }
 
 @end

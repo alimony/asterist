@@ -174,7 +174,7 @@
             [[self ipfsController] setApiAddress:[self getApiAddress]];
 
             // Hide the loading spinner and text.
-            [self.viewController.loadingIndicator stopAnimation:self];
+            [[[self viewController] loadingIndicator] stopAnimation:self];
             [[[self viewController] loadingTextField] setHidden:YES];
 
             // Update the initially selected tab and display the tab view.

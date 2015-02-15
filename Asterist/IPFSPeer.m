@@ -11,7 +11,7 @@
 @implementation IPFSPeer
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<IPFSPeer: %@>", self.peerId];
+    return [NSString stringWithFormat:@"<IPFSPeer: %@>", [self peerId]];
 }
 
 @end

@@ -16,6 +16,7 @@
 		28AB2C191A4EF4BB006D241F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28AB2C181A4EF4BB006D241F /* Images.xcassets */; };
 		28B014331A73075B00FEEE56 /* asterist_wait_pid.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28B014311A72F50300FEEE56 /* asterist_wait_pid.py */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		28CDF1BF1A50BAE1006B019A /* ipfs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28CDF1BB1A50BACD006B019A /* ipfs */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		28DD35871A9146C6003941BE /* IPFSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DD35861A9146C6003941BE /* IPFSObject.m */; };
 		28FE4B2B1A864858008AC426 /* NSStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FE4B2A1A864858008AC426 /* NSStringValueTransformer.m */; };
 		28FE4B2F1A864941008AC426 /* NSUpperCaseTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FE4B2E1A864941008AC426 /* NSUpperCaseTransformer.m */; };
 		AEF72774B1104C929D37C565 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12BB941A01340C5EEFFC0B78 /* libPods.a */; };
@@ -71,6 +72,8 @@
 		28B014311A72F50300FEEE56 /* asterist_wait_pid.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = asterist_wait_pid.py; sourceTree = "<group>"; };
 		28CDF1771A50AA2A006B019A /* go */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = go; path = External/go/bin/go; sourceTree = "<group>"; };
 		28CDF1BB1A50BACD006B019A /* ipfs */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = ipfs; path = "External/go-ipfs/bin/ipfs"; sourceTree = "<group>"; };
+		28DD35851A9146C6003941BE /* IPFSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPFSObject.h; sourceTree = "<group>"; };
+		28DD35861A9146C6003941BE /* IPFSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPFSObject.m; sourceTree = "<group>"; };
 		28FE4B291A864858008AC426 /* NSStringValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringValueTransformer.h; sourceTree = "<group>"; };
 		28FE4B2A1A864858008AC426 /* NSStringValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringValueTransformer.m; sourceTree = "<group>"; };
 		28FE4B2D1A864941008AC426 /* NSUpperCaseTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUpperCaseTransformer.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				28AB2C111A4EF4BB006D241F /* AppController.m */,
 				288ACE8C1A81731800E267D2 /* IPFSController.h */,
 				288ACE8D1A81731800E267D2 /* IPFSController.m */,
+				28DD35851A9146C6003941BE /* IPFSObject.h */,
+				28DD35861A9146C6003941BE /* IPFSObject.m */,
 				288ACE8F1A8182A000E267D2 /* IPFSPeer.h */,
 				288ACE901A8182A000E267D2 /* IPFSPeer.m */,
 				28AB2C151A4EF4BB006D241F /* ViewController.h */,
@@ -322,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28DD35871A9146C6003941BE /* IPFSObject.m in Sources */,
 				28AB2C171A4EF4BB006D241F /* ViewController.m in Sources */,
 				288ACE911A8182A000E267D2 /* IPFSPeer.m in Sources */,
 				28FE4B2F1A864941008AC426 /* NSUpperCaseTransformer.m in Sources */,

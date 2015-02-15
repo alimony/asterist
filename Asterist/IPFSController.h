@@ -33,4 +33,10 @@
 @property NSArray *swarm;
 @property NSTimer *updateSwarmTimer;
 
+// Files
+- (void)daemonGetPinnedFiles;
+- (void)daemonGetLocalFiles;
+@property NSArray *pinnedFiles;
+@property NSArray *localFiles;
+
 @end

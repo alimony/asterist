@@ -30,4 +30,9 @@
 // Connections
 @property (weak) IBOutlet NSTableView *swarmTable;
 
+// Files
+@property (weak) IBOutlet NSTabView *filesTabView;
+@property (weak) IBOutlet NSTableView *pinnedFilesTable;
+@property (weak) IBOutlet NSTableView *localFilesTable;
+
 @end
