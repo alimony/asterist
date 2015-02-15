@@ -1,7 +1,3 @@
-[submodule "External/node/npm"]
-	path = External/node/npm
-	url = https://github.com/npm/npm.git
-	ignore = dirty
 [submodule "External/go"]
 	path = External/go
 	url = https://github.com/golang/go.git
