@@ -35,4 +35,7 @@
 @property (weak) IBOutlet NSTableView *pinnedFilesTable;
 @property (weak) IBOutlet NSTableView *localFilesTable;
 
+// Config
+@property IBOutlet NSTextView *configTextView;
+
 @end

@@ -11,6 +11,10 @@
 
 @implementation ViewController
 
+- (void)awakeFromNib {
+    [[self configTextView] setFont:[NSFont userFixedPitchFontOfSize:[NSFont smallSystemFontSize]]];
+}
+
 // This method is called every time a tab is selected in a tab view.
 - (void)tabView:(NSTabView *)tabView willSelectTabViewItem:(NSTabViewItem *)tabViewItem {
     if ([tabView isEqual:[self tabView]]) {

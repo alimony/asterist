@@ -1041,7 +1041,7 @@
                                                 <rect key="frame" x="1" y="119" width="223" height="15"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
-                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="gac-Qk-tLi">
+                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="gac-Qk-tLi">
                                                 <rect key="frame" x="224" y="17" width="15" height="102"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
@@ -1263,6 +1263,45 @@
                                 <view key="view" id="zNv-e3-24Q">
                                     <rect key="frame" x="10" y="33" width="754" height="438"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSP-jp-1qK">
+                                            <rect key="frame" x="17" y="17" width="720" height="418"/>
+                                            <clipView key="contentView" id="1jV-sh-tF1">
+                                                <rect key="frame" x="1" y="1" width="223" height="133"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="2Hb-dN-J1h">
+                                                        <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <size key="minSize" width="718" height="416"/>
+                                                        <size key="maxSize" width="718" height="10000000"/>
+                                                        <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <size key="minSize" width="718" height="416"/>
+                                                        <size key="maxSize" width="718" height="10000000"/>
+                                                        <connections>
+                                                            <binding destination="gAh-fU-2Rs" name="value" keyPath="configString" id="8FH-Wl-2yB"/>
+                                                        </connections>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1Ts-kp-hiL">
+                                                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="wUd-tV-pt8">
+                                                <rect key="frame" x="224" y="1" width="15" height="133"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                        </scrollView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rSP-jp-1qK" firstAttribute="leading" secondItem="zNv-e3-24Q" secondAttribute="leading" constant="17" id="Wdn-cM-l4N"/>
+                                        <constraint firstAttribute="bottom" secondItem="rSP-jp-1qK" secondAttribute="bottom" constant="17" id="dbR-Tl-3p8"/>
+                                        <constraint firstItem="rSP-jp-1qK" firstAttribute="top" secondItem="zNv-e3-24Q" secondAttribute="top" constant="3" id="nW6-xt-F6E"/>
+                                        <constraint firstAttribute="trailing" secondItem="rSP-jp-1qK" secondAttribute="trailing" constant="17" id="sQB-Yw-dvw"/>
+                                    </constraints>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Logs" identifier="" id="gZk-W1-1Rw">
@@ -1300,6 +1339,7 @@
         <viewController nibName="" id="kav-BY-FuC" userLabel="Main View Controller" customClass="ViewController">
             <connections>
                 <outlet property="agentVersionField" destination="5bl-kV-tyR" id="g0T-i8-8Q1"/>
+                <outlet property="configTextView" destination="2Hb-dN-J1h" id="O08-w9-0J8"/>
                 <outlet property="filesTabView" destination="uAI-jR-lQH" id="N8G-i7-88c"/>
                 <outlet property="ipfsController" destination="gAh-fU-2Rs" id="vs7-wt-h1d"/>
                 <outlet property="loadingIndicator" destination="slG-6k-gfr" id="InN-Tx-aUK"/>
