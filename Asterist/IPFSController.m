@@ -122,60 +122,50 @@
 #pragma mark -
 #pragma mark Files
 
+// Get a list of pinned files, in direct or recursive mode. This is a "private"
+// method that in turn is called by a couple of public methods below so that the
+// recursive flag won't have to be passed all the time. Explicit method names is
+// better.
+- (void)_daemonGetPinnedFiles:(BOOL)recursive {
+    NSString *requestPath = @"/api/v0/pin/ls";
+
+    if (recursive) {
+        requestPath = @"/api/v0/pin/ls?type=recursive";
+    }
+
+    [self daemonCommand:requestPath successCallback:
+     ^(AFHTTPRequestOperation *operation, id responseObject) {
+         NSArray *keys = responseObject[@"Keys"];
+
+         if ([keys count] > 0) {
+             NSMutableArray *addedObjects = [NSMutableArray array];
+
+             for (NSString *objectId in keys) {
+                 IPFSObject *newObject = [[IPFSObject alloc] init];
+                 [newObject setObjectId:objectId];
+                 [addedObjects addObject:newObject];
+             }
+
+             if (recursive) {
+                 NSLog(@"All local files: %@", addedObjects);
+                 [self setLocalFiles:addedObjects];
+             }
+             else {
+                 NSLog(@"Pinned files: %@", addedObjects);
+                 [self setPinnedFiles:addedObjects];
+             }
+         }
+     }];
+}
+
 // Get a list of pinned files.
 - (void)daemonGetPinnedFiles {
-    [self daemonCommand:@"/api/v0/pin/ls" successCallback:
-    ^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray *keys = responseObject[@"Keys"];
-        
-        if ([keys count] > 0) {
-            NSMutableArray *addedObjects = [NSMutableArray array];
-            
-            for (NSString *objectId in keys) {
-                IPFSObject *newObject = [[IPFSObject alloc] init];
-                [newObject setObjectId:objectId];
-                [addedObjects addObject:newObject];
-            }
-            
-            NSLog(@"Pinned files: %@", addedObjects);
-            
-            [self setPinnedFiles:addedObjects];
-        }
-    }];
+    [self _daemonGetPinnedFiles:NO];
 }
 
 // Get a list of all local files.
 - (void)daemonGetLocalFiles {
-    // TODO: Something smarter than...
-    [[self httpManager] setResponseSerializer:[AFHTTPResponseSerializer serializer]];
-    
-    [self daemonCommand:@"/api/v0/refs/local" successCallback:
-    ^(AFHTTPRequestOperation *operation, id responseObject) {
-        // TODO: Why are these not returned by ipfs as e.g. JSON?
-        NSString *responseString = [[NSString alloc] initWithData:responseObject
-                                                         encoding:NSUTF8StringEncoding];
-         
-        NSArray *objectIds = [responseString componentsSeparatedByString:@"\n"];
-         
-        if ([objectIds count] > 0) {
-            NSMutableArray *addedObjects = [NSMutableArray array];
-             
-            for (NSString *objectId in objectIds) {
-                if ([objectId length] > 0) {
-                    IPFSObject *newObject = [[IPFSObject alloc] init];
-                    [newObject setObjectId:objectId];
-                    [addedObjects addObject:newObject];
-                }
-            }
-             
-            NSLog(@"All local files: %@", addedObjects);
-             
-            [self setLocalFiles:addedObjects];
-        }
-    }];
-    
-    // TODO: ...and then:
-    [[self httpManager] setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [self _daemonGetPinnedFiles:YES];
 }
 
 @end
