@@ -25,7 +25,7 @@
 @property (weak) IBOutlet NSTextField *locationField;
 @property (weak) IBOutlet NSTextField *agentVersionField;
 @property (weak) IBOutlet NSTextField *protocolVersionField;
-@property (weak) IBOutlet NSTextField *publicKeyField;
+@property IBOutlet NSTextView *publicKeyTextView;
 
 // Connections
 @property (weak) IBOutlet NSTableView *swarmTable;

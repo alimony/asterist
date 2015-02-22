@@ -760,21 +760,46 @@
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="sUU-L5-RWq">
+                                                    <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANE-On-NwP">
                                                         <rect key="frame" x="138" y="19" width="584" height="100"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="a7z-sU-F3u"/>
-                                                        </constraints>
-                                                        <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="lB2-9y-UPd">
-                                                            <font key="font" metaFont="system"/>
-                                                            <string key="title">abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc</string>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                        <connections>
-                                                            <binding destination="gAh-fU-2Rs" name="value" keyPath="publicKey" id="3rY-WZ-PnB"/>
-                                                        </connections>
-                                                    </textField>
+                                                        <clipView key="contentView" id="CKH-uz-95R">
+                                                            <rect key="frame" x="1" y="1" width="223" height="133"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" usesRuler="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="7ZO-Rj-agM">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <size key="minSize" width="567" height="98"/>
+                                                                    <size key="maxSize" width="582" height="10000000"/>
+                                                                    <attributedString key="textStorage">
+                                                                        <fragment>
+                                                                            <mutableString key="content">abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc</mutableString>
+                                                                            <attributes>
+                                                                                <font key="NSFont" metaFont="controlContent" size="11"/>
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <size key="minSize" width="567" height="98"/>
+                                                                    <size key="maxSize" width="582" height="10000000"/>
+                                                                    <connections>
+                                                                        <binding destination="gAh-fU-2Rs" name="value" keyPath="publicKey" id="8xY-Fw-B3p"/>
+                                                                    </connections>
+                                                                </textView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </clipView>
+                                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="clt-IX-GL6">
+                                                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </scroller>
+                                                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="l28-31-bcJ">
+                                                            <rect key="frame" x="224" y="1" width="15" height="133"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </scroller>
+                                                    </scrollView>
                                                 </subviews>
                                             </view>
                                             <constraints>
@@ -788,22 +813,23 @@
                                                 <constraint firstItem="Ark-Jj-ajq" firstAttribute="leading" secondItem="HIj-IB-D9I" secondAttribute="leading" constant="16" id="DEj-E5-yvZ"/>
                                                 <constraint firstItem="DLs-HQ-Z3L" firstAttribute="top" secondItem="9Vp-Ta-TVJ" secondAttribute="bottom" constant="8" id="EBd-KV-2Hq"/>
                                                 <constraint firstItem="9Vp-Ta-TVJ" firstAttribute="leading" secondItem="HIj-IB-D9I" secondAttribute="leading" constant="16" id="I3X-Xj-k8k"/>
-                                                <constraint firstItem="sUU-L5-RWq" firstAttribute="top" secondItem="oZD-Ji-RLp" secondAttribute="bottom" constant="20" id="Jt6-xm-kB6"/>
+                                                <constraint firstItem="ANE-On-NwP" firstAttribute="top" secondItem="oZD-Ji-RLp" secondAttribute="bottom" constant="20" id="Jk6-YB-MiJ"/>
                                                 <constraint firstItem="290-RQ-GIK" firstAttribute="leading" secondItem="Wot-ln-AVO" secondAttribute="trailing" constant="58" id="KRz-jc-Yub"/>
                                                 <constraint firstItem="oZD-Ji-RLp" firstAttribute="leading" secondItem="DLs-HQ-Z3L" secondAttribute="trailing" constant="8" id="Kcb-ZI-bRr"/>
                                                 <constraint firstItem="oZD-Ji-RLp" firstAttribute="top" secondItem="5bl-kV-tyR" secondAttribute="bottom" constant="8" id="N2Z-O5-Cp5"/>
                                                 <constraint firstItem="ZXr-ry-fUw" firstAttribute="leading" secondItem="HIj-IB-D9I" secondAttribute="leading" constant="16" id="Nsg-Sa-XcJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="oZD-Ji-RLp" secondAttribute="trailing" constant="16" id="PNP-wa-TLU"/>
+                                                <constraint firstItem="ANE-On-NwP" firstAttribute="leading" secondItem="Ark-Jj-ajq" secondAttribute="trailing" constant="48" id="TEC-az-Fh3"/>
                                                 <constraint firstAttribute="trailing" secondItem="290-RQ-GIK" secondAttribute="trailing" constant="16" id="WaM-XS-PWR"/>
                                                 <constraint firstItem="290-RQ-GIK" firstAttribute="top" secondItem="c5g-Nz-eYz" secondAttribute="bottom" constant="20" id="Wi9-Hq-1KO"/>
                                                 <constraint firstItem="Wot-ln-AVO" firstAttribute="leading" secondItem="HIj-IB-D9I" secondAttribute="leading" constant="16" id="XQb-1i-4s2"/>
                                                 <constraint firstItem="DLs-HQ-Z3L" firstAttribute="leading" secondItem="HIj-IB-D9I" secondAttribute="leading" constant="16" id="XiQ-UQ-YOo"/>
+                                                <constraint firstAttribute="bottom" secondItem="ANE-On-NwP" secondAttribute="bottom" constant="16" id="bNM-Wl-Shq"/>
+                                                <constraint firstAttribute="trailing" secondItem="ANE-On-NwP" secondAttribute="trailing" constant="16" id="bqQ-mM-YYc"/>
                                                 <constraint firstItem="c5g-Nz-eYz" firstAttribute="leading" secondItem="ZXr-ry-fUw" secondAttribute="trailing" constant="67" id="f2h-d2-4Z5"/>
                                                 <constraint firstItem="5bl-kV-tyR" firstAttribute="leading" secondItem="9Vp-Ta-TVJ" secondAttribute="trailing" constant="25" id="g6d-dG-2cR"/>
                                                 <constraint firstItem="9Vp-Ta-TVJ" firstAttribute="top" secondItem="Wot-ln-AVO" secondAttribute="bottom" constant="8" id="gYj-KM-A4u"/>
                                                 <constraint firstAttribute="trailing" secondItem="c5g-Nz-eYz" secondAttribute="trailing" constant="16" id="juI-x4-hhg"/>
-                                                <constraint firstAttribute="trailing" secondItem="sUU-L5-RWq" secondAttribute="trailing" constant="16" id="kOv-SU-uvY"/>
-                                                <constraint firstItem="sUU-L5-RWq" firstAttribute="leading" secondItem="Ark-Jj-ajq" secondAttribute="trailing" constant="48" id="uFX-s7-Lks"/>
                                             </constraints>
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1264,43 +1290,52 @@
                                     <rect key="frame" x="10" y="33" width="754" height="438"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSP-jp-1qK">
+                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3x4-SW-sDn">
                                             <rect key="frame" x="17" y="17" width="720" height="418"/>
-                                            <clipView key="contentView" id="1jV-sh-tF1">
+                                            <clipView key="contentView" id="TBM-bi-A52">
                                                 <rect key="frame" x="1" y="1" width="223" height="133"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="2Hb-dN-J1h">
+                                                    <textView editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="28C-2I-cWR">
                                                         <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <size key="minSize" width="718" height="416"/>
-                                                        <size key="maxSize" width="718" height="10000000"/>
+                                                        <size key="minSize" width="703" height="416"/>
+                                                        <size key="maxSize" width="703" height="10000000"/>
+                                                        <attributedString key="textStorage">
+                                                            <fragment>
+                                                                <mutableString key="content">abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc</mutableString>
+                                                                <attributes>
+                                                                    <font key="NSFont" metaFont="controlContent" size="11"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
                                                         <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <size key="minSize" width="718" height="416"/>
-                                                        <size key="maxSize" width="718" height="10000000"/>
+                                                        <size key="minSize" width="703" height="416"/>
+                                                        <size key="maxSize" width="703" height="10000000"/>
                                                         <connections>
-                                                            <binding destination="gAh-fU-2Rs" name="value" keyPath="configString" id="8FH-Wl-2yB"/>
+                                                            <binding destination="gAh-fU-2Rs" name="value" keyPath="configString" id="SUb-1g-7yR"/>
                                                         </connections>
                                                     </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </clipView>
-                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1Ts-kp-hiL">
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="sLW-Ou-mMU">
                                                 <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
-                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="wUd-tV-pt8">
+                                            <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="2FN-JC-mQP">
                                                 <rect key="frame" x="224" y="1" width="15" height="133"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="rSP-jp-1qK" firstAttribute="leading" secondItem="zNv-e3-24Q" secondAttribute="leading" constant="17" id="Wdn-cM-l4N"/>
-                                        <constraint firstAttribute="bottom" secondItem="rSP-jp-1qK" secondAttribute="bottom" constant="17" id="dbR-Tl-3p8"/>
-                                        <constraint firstItem="rSP-jp-1qK" firstAttribute="top" secondItem="zNv-e3-24Q" secondAttribute="top" constant="3" id="nW6-xt-F6E"/>
-                                        <constraint firstAttribute="trailing" secondItem="rSP-jp-1qK" secondAttribute="trailing" constant="17" id="sQB-Yw-dvw"/>
+                                        <constraint firstItem="3x4-SW-sDn" firstAttribute="top" secondItem="zNv-e3-24Q" secondAttribute="top" constant="3" id="2HA-KX-32X"/>
+                                        <constraint firstItem="3x4-SW-sDn" firstAttribute="leading" secondItem="zNv-e3-24Q" secondAttribute="leading" constant="17" id="NQB-jn-XfP"/>
+                                        <constraint firstAttribute="trailing" secondItem="3x4-SW-sDn" secondAttribute="trailing" constant="17" id="Ztu-t5-uPM"/>
+                                        <constraint firstAttribute="bottom" secondItem="3x4-SW-sDn" secondAttribute="bottom" constant="17" id="yEM-b6-87l"/>
                                     </constraints>
                                 </view>
                             </tabViewItem>
@@ -1339,7 +1374,7 @@
         <viewController nibName="" id="kav-BY-FuC" userLabel="Main View Controller" customClass="ViewController">
             <connections>
                 <outlet property="agentVersionField" destination="5bl-kV-tyR" id="g0T-i8-8Q1"/>
-                <outlet property="configTextView" destination="2Hb-dN-J1h" id="O08-w9-0J8"/>
+                <outlet property="configTextView" destination="28C-2I-cWR" id="giO-pd-ose"/>
                 <outlet property="filesTabView" destination="uAI-jR-lQH" id="N8G-i7-88c"/>
                 <outlet property="ipfsController" destination="gAh-fU-2Rs" id="vs7-wt-h1d"/>
                 <outlet property="loadingIndicator" destination="slG-6k-gfr" id="InN-Tx-aUK"/>
@@ -1349,7 +1384,7 @@
                 <outlet property="peerIdField" destination="c5g-Nz-eYz" id="FoL-fb-x9O"/>
                 <outlet property="pinnedFilesTable" destination="Jpe-q7-0Ld" id="yig-1s-Zog"/>
                 <outlet property="protocolVersionField" destination="oZD-Ji-RLp" id="bSR-Ro-DmT"/>
-                <outlet property="publicKeyField" destination="sUU-L5-RWq" id="IHp-pb-Vcp"/>
+                <outlet property="publicKeyTextView" destination="7ZO-Rj-agM" id="aQs-9Z-zXn"/>
                 <outlet property="swarmTable" destination="mW0-FF-zQ7" id="iAa-8t-gd2"/>
                 <outlet property="tabView" destination="BMW-0h-zkf" id="jS4-PK-9hG"/>
             </connections>
