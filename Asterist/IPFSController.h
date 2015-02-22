@@ -39,4 +39,8 @@
 @property NSArray *pinnedFiles;
 @property NSArray *localFiles;
 
+// Config
+- (void)daemonGetConfig;
+@property NSString *configString;
+
 @end

@@ -43,6 +43,9 @@
         NSString *currentlySelectedLabel = [[[self filesTabView] selectedTabViewItem] label];
         [self updateFileViewForLabel:currentlySelectedLabel];
     }
+    else if ([label isEqualToString:@"Config"]) {
+        [[self ipfsController] daemonGetConfig];
+    }
 }
 
 // Update one of the views in the files tab view, which is itself a child of the

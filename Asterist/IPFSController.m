@@ -168,4 +168,25 @@
     [self _daemonGetPinnedFiles:YES];
 }
 
+#pragma mark -
+#pragma mark Config
+
+// Get the current configuration and display it as raw JSON in a text field.
+- (void)daemonGetConfig {
+    // TODO: Something smarter than...
+    [[self httpManager] setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+
+    [self daemonCommand:@"/api/v0/config/show" successCallback:
+    ^(AFHTTPRequestOperation *operation, id responseObject) {
+        // TODO: Why is this not returned by ipfs as e.g. JSON?
+        NSString *responseString = [[NSString alloc] initWithData:responseObject
+                                                         encoding:NSUTF8StringEncoding];
+
+        [self setConfigString:responseString];
+    }];
+
+    // TODO: ...and then:
+    [[self httpManager] setResponseSerializer:[AFJSONResponseSerializer serializer]];
+}
+
 @end
