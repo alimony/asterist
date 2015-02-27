@@ -54,6 +54,20 @@
         [self setAgentVersion:responseObject[@"AgentVersion"]];
         [self setProtocolVersion:responseObject[@"ProtocolVersion"]];
         [self setPublicKey:responseObject[@"PublicKey"]];
+
+        NSArray *networkAddresses = responseObject[@"Addresses"];
+        if ([networkAddresses count] > 0) {
+            NSMutableArray *addedAddresses = [NSMutableArray array];
+
+            // These are peers like any others, except they point at ourselves.
+            for (NSString *peerString in networkAddresses) {
+                [addedAddresses addObject:[IPFSPeer peerFromString:peerString]];
+            }
+
+            NSLog(@"All local network addresses: %@", addedAddresses);
+
+            [self setNetworkAddresses:addedAddresses];
+        }
     }];
 }
 

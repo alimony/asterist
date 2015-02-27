@@ -25,6 +25,7 @@
 @property NSString *agentVersion;
 @property NSString *protocolVersion;
 @property NSString *publicKey;
+@property NSArray *networkAddresses;
 
 // Connections
 - (void)daemonGetSwarm;
