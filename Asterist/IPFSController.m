@@ -69,27 +69,9 @@
         if ([strings count] > 0) {
             NSMutableArray *addedPeers = [NSMutableArray array];
 
-            // We get back an array of strings looking like this:
-            // "/ip4/123.456.789.123/tcp/5001/ipfs/QmSabcSGcabcZQJzRaabc95WabcSFmabcdDWabcXaHabcz"
-            // Split into its parts and make IPFSPeer objects.
+            // We get back an array of strings.
             for (NSString *peerString in strings) {
-                IPFSPeer *newPeer = [[IPFSPeer alloc] init];
-                NSArray *parts = [peerString componentsSeparatedByString:@"/"];
-
-                if ([parts[1] isEqualToString:@"ip6"]) {
-                    [newPeer setIpProtocolVersion:@6];
-                }
-                else {
-                    [newPeer setIpProtocolVersion:@4];
-                }
-
-                [newPeer setHost:parts[2]];
-                [newPeer setNetworkProtocol:parts[3]];
-                [newPeer setPort:@([parts[4] integerValue])];
-                // For now, skip parts[5]: "ipfs"
-                [newPeer setPeerId:parts[6]];
-
-                [addedPeers addObject:newPeer];
+                [addedPeers addObject:[IPFSPeer peerFromString:peerString]];
             }
             
             NSLog(@"Current peers in swarm: %@", addedPeers);

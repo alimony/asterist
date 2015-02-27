@@ -16,4 +16,6 @@
 @property NSNumber *port;
 @property NSString *peerId;
 
++ (IPFSPeer *)peerFromString:(NSString *)peerString;
+
 @end
