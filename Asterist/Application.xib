@@ -639,6 +639,46 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem id="Oeg-pD-iVD">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" id="d8f-72-U4O">
+                        <items>
+                            <menuItem title="Hosts" enabled="NO" id="rEo-Bi-1c0">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="127.0.0.1 – mylittleserver.local" id="mdi-4s-YEY">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="7jC-EY-KUn"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="127.0.0.1 – someserver.local" state="on" id="bOa-bO-o4F">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="zjn-m2-3vs"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="123.456.789.123 – example.com" state="on" id="PzC-n5-35K">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="xVi-6N-lF2"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="234.567.890.123 – example.org" id="o1h-6U-Z2v">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="g2k-nh-1lU"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="127.0.0.1 – example.net" state="on" id="t2F-jM-FWK">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="0We-Cb-o3Y"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
             </items>
         </menu>
         <window title="Asterist" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
@@ -1559,6 +1599,44 @@
                                 <view key="view" id="vw8-Fk-by2">
                                     <rect key="frame" x="10" y="33" width="754" height="438"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NeS-S6-aRh">
+                                            <rect key="frame" x="17" y="388" width="673" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="JGU-XW-a4k">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="58Z-qJ-nMa">
+                                            <rect key="frame" x="15" y="418" width="724" height="17"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter hash or path:" id="yOM-4w-Yaw">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="BUS-g3-MrC">
+                                            <rect key="frame" x="696" y="384" width="43" height="29"/>
+                                            <buttonCell key="cell" type="bevel" title="Go" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7QA-pv-rzg">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="58Z-qJ-nMa" firstAttribute="top" secondItem="vw8-Fk-by2" secondAttribute="top" constant="3" id="JXa-Pu-6lF"/>
+                                        <constraint firstAttribute="trailing" secondItem="BUS-g3-MrC" secondAttribute="trailing" constant="17" id="MFX-tj-M1p"/>
+                                        <constraint firstItem="NeS-S6-aRh" firstAttribute="top" secondItem="58Z-qJ-nMa" secondAttribute="bottom" constant="8" id="Pms-RJ-goe"/>
+                                        <constraint firstItem="BUS-g3-MrC" firstAttribute="top" secondItem="58Z-qJ-nMa" secondAttribute="bottom" constant="7" id="YlQ-Sg-JSR"/>
+                                        <constraint firstItem="BUS-g3-MrC" firstAttribute="leading" secondItem="NeS-S6-aRh" secondAttribute="trailing" constant="8" id="hkh-kS-bx5"/>
+                                        <constraint firstAttribute="trailing" secondItem="58Z-qJ-nMa" secondAttribute="trailing" constant="17" id="hl3-hi-ZuA"/>
+                                        <constraint firstItem="NeS-S6-aRh" firstAttribute="leading" secondItem="vw8-Fk-by2" secondAttribute="leading" constant="17" id="tIg-AX-yAu"/>
+                                        <constraint firstItem="58Z-qJ-nMa" firstAttribute="leading" secondItem="vw8-Fk-by2" secondAttribute="leading" constant="17" id="w8J-j5-eBo"/>
+                                    </constraints>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Config" identifier="" id="6M1-fu-PPs">
